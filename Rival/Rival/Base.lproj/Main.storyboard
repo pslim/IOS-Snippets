@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Rival" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1A-ou-K2v">
+                                <rect key="frame" x="-4" y="20" width="383" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="VDR-9k-VJc"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Rival" id="F8y-9E-vJ8"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="236-3o-Z1g">
+                                <rect key="frame" x="-4" y="64" width="387" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="playerCell" id="zia-g9-TdY">
+                                        <rect key="frame" x="0.0" y="28" width="387" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zia-g9-TdY" id="CZ7-Lh-BSp">
+                                            <rect key="frame" x="0.0" y="0.0" width="387" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="yhy-e3-K3A"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vgN-zL-mxt"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIc-t5-tSD">
+                                <rect key="frame" x="-4" y="623" width="383" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nfz-1v-QmM"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="9MV-3V-ofk">
+                                        <connections>
+                                            <action selector="pressedClearBarButtonItem:" destination="BYZ-38-t0r" id="nja-CQ-job"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aGG-v1-h68"/>
+                                    <barButtonItem systemItem="search" id="d2o-fq-qhY">
+                                        <connections>
+                                            <action selector="pressedSearchBarButtonItem:" destination="BYZ-38-t0r" id="olk-2V-QtV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Tuv-qS-cX3"/>
+                                    <barButtonItem systemItem="add" id="iXJ-fu-Iop">
+                                        <connections>
+                                            <action selector="pressedAddBarButtonItem:" destination="BYZ-38-t0r" id="t5E-tb-Y6R"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eIc-t5-tSD" secondAttribute="bottom" id="0dO-fa-nEw"/>
+                            <constraint firstItem="eIc-t5-tSD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="72n-QJ-xvF"/>
+                            <constraint firstItem="R1A-ou-K2v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="9zj-PR-b1C"/>
+                            <constraint firstItem="236-3o-Z1g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="KGW-cg-JJ8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="236-3o-Z1g" secondAttribute="trailing" constant="-24" id="Lqs-v6-ixR"/>
+                            <constraint firstItem="eIc-t5-tSD" firstAttribute="top" secondItem="236-3o-Z1g" secondAttribute="bottom" id="T5S-Er-6BA"/>
+                            <constraint firstItem="R1A-ou-K2v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dZq-u2-K8r"/>
+                            <constraint firstItem="236-3o-Z1g" firstAttribute="top" secondItem="R1A-ou-K2v" secondAttribute="bottom" id="nf5-37-L92"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eIc-t5-tSD" secondAttribute="trailing" constant="-20" id="xG1-wo-VUl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R1A-ou-K2v" secondAttribute="trailing" constant="-20" id="yL3-d7-E4s"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="playerTableView" destination="236-3o-Z1g" id="vun-or-Gdh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="279.5" y="301.5"/>
+        </scene>
+    </scenes>
+</document>
