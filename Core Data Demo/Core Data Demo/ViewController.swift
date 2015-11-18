@@ -15,10 +15,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let context: NSManagedObjectContext = appDel.managedObjectContext
-        
+
+        // insert into database
+        /*
         let newUser = NSEntityDescription.insertNewObjectForEntityForName("Users", inManagedObjectContext: context)
         
         newUser.setValue("Paige", forKey: "username")
@@ -28,9 +31,15 @@ class ViewController: UIViewController {
             try context.save()
         } catch {
             print("There was a problem!")
-        }
-            
+        }*/
+
+        
         let request = NSFetchRequest(entityName: "Users")
+        
+        // database query
+        /*
+        request.predicate = NSPredicate(format: "username = %@", "Johnny")
+        */
         request.returnsObjectsAsFaults = false
         
         do {
@@ -38,8 +47,28 @@ class ViewController: UIViewController {
             
             if (results.count > 0) {
                 for result in results as! [NSManagedObject] {
-                    print(result.valueForKey("username"))
-                    print(result.valueForKey("password"))
+                    
+                    // update value
+                    /*
+                    result.setValue("Edwin", forKey: "username")
+                    */
+                    
+                    // delete value
+                    /*
+                    context.deleteObject(result);
+                    */
+
+                    // save changes to database
+                    /*
+                    do {
+                        try context.save()
+                    } catch {
+                        
+                    }*/
+                    
+                    if let username = result.valueForKey("username") as? String {
+                        print(username);
+                    }
                 }
             }
             
